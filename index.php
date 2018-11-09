@@ -14,7 +14,7 @@
   </div>
 
   <div class="forms">
-    <form action="information-retrieval/vector-space-model/rank.php" method="post">
+    <form action="/information-retrieval/vector-space-model/rank.php" method="post">
       <input type="text" name="querystring" placeholder="Ex: <A:0.4;B:0.6;C;>" autofocus>
       <input type="submit" value="Search" class="button">
     </form>
