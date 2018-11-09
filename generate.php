@@ -22,7 +22,11 @@ function generate ($file, $chars) {
   // and then add to str string 
   for($i = 0; $i < $fileLength; $i++) {
     $index = rand(0, count($chars) - 1);
-    $str.= $chars[$index] . ' ';
+    $str.= $chars[$index];
+    // check to prevent add white space at the end
+    if($i != $fileLength - 1) {
+      $str .= ' ';
+    }
   }
   // write str in the opened file
   fwrite($file, $str);
