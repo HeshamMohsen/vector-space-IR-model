@@ -38,4 +38,48 @@ generate($fileFour, $charSet);
 generate($fileFive, $charSet);
 
 
+// get files content
+$fileContent1 = file_get_contents("file1.txt");
+$fileContent2 = file_get_contents("file2.txt");
+$fileContent3 = file_get_contents("file3.txt");
+$fileContent4 = file_get_contents("file4.txt");
+$fileContent5 = file_get_contents("file5.txt");
+
+// check if all 5-files generated successfully
+if ( ($fileContent1 != "") && ($fileContent2 != "") && ($fileContent3 != "") && ($fileContent4 != "") && ($fileContent5 != "") ) {
+  $title = "Done.";
+  $message = "files generated successfully";
+  $btnText = "start search";
+} else {
+  $title = "Whoops...";
+  $message = "error while generate, please go back and try again!";
+  $btnText = "Try Again";
+}
+
+$htmlStructure = '
+  <div class="handler--white">
+    <div class="header-text">
+      <div class="header-square">
+        <h1>' . $title . '</h1>
+        <p>' . $message . '</p>
+        <a href="http://localhost/information-retrieval/vector-space-model/index.php">' . $btnText . '</a>
+      </div>
+    </div>
+    <div class="image">
+      <div class="image--square">
+          <img src="images/file.PNG"/>
+      </div>
+    </div>
+  </div>';
+  
 ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/normalize.css"> 
+    <link rel="stylesheet" href="css/ir.css">
+  <body>
+      <?php echo $htmlStructure; ?>
+  </body>
+</html>
